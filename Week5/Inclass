@@ -1,3 +1,9 @@
+-- My takeaway from this week: 
+-- From my query, if I just use "COUNT(DISTINCT m.Rx_name)", I can count unique drug names per provider. 
+-- However, if I use "COUNT(DISTINCT m.Rx_name || m.RX_date || m.RX_date ) AS drug_count", I can count each unique combination of drug name + prescription date and the drug count will be higher (in this case).
+
+
+
 SELECT 
     v.Attending_md As Provider_name,
     COUNT(DISTINCT v.Pid) AS visit_count,
